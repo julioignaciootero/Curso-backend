@@ -12,6 +12,7 @@ class Usuario {
     // addBook(string, string) : voud nombre y autor, y lo agrega
     // getBookNames() : string[] retorna un array con solo los nombres 
 
+    //Constructo con propiedades, parametro Nombre y Apellido
     constructor(nombre, appellido) {
 
         this.nombre = nombre
@@ -21,25 +22,29 @@ class Usuario {
     }
 
     
-
+    // Funcion que devuelve el nombre completo
     getFullName() {
 
-        return `Nombre: ${this.nombre} Apellido: ${this.appelido}`
+        return `Nombre: ${this.nombre} , Apellido: ${this.appelido}`
 
     }
-
+    
+    //Agregar una mascota al array de mascotas
     addMascota(mascota) {
         this.mascotas.push(mascota)
     }
 
+    //Agregar un libro al array de objs
     addBook(nombre, autor) {
 
         this.books.push({ nombre : nombre, autor : autor})
         
     }
 
+    //Funcion que devuelve cantidad de mascotas
     countMascotas() { return this.mascotas.length}
 
+    //Funcion que devuelve un array de nombre de libros
     getBookNames() {
 
         let booksArray = []
@@ -53,15 +58,17 @@ class Usuario {
 }
 
 
-const user = new Usuario('Julio' , 'Otero')
-user.addBook("Rayuela" , "Cortazar")
-user.addBook("Agilmente" , "Bachrach")
-user.addMascota("IPA")
+const user = new Usuario('Elon' , 'Musk')  //Creamos un usuario Elon Musk
+user.addBook("El señor de las moscas" , "William Golding")  //Agrego primer libro
+user.addBook("Fundacion" , "Isaac Asimov") //Agrego segundo libro
+user.addMascota("Perro")   //Agrego mascota 1
+user.addMascota("Gato")    //Agrego mascota 2
 
 
+
+console.log("Cantidad de mascotas ",user.countMascotas())   
+console.log(user.getBookNames())
 console.log(user.getFullName())
-console.log("Cantidad de mascotas ",user.countMascotas())
-console.table(user.getBookNames())
 
 
 
