@@ -13,11 +13,11 @@ class Usuario {
     // getBookNames() : string[] retorna un array con solo los nombres 
 
     //Constructo con propiedades, parametro Nombre y Apellido
-    constructor(nombre, appellido) {
+    constructor(nombre, appellido, masc = []) {
 
         this.nombre = nombre
         this.appelido = appellido
-        this.mascotas = []
+        this.mascotas = masc
         this.books = []
     }
 
@@ -58,11 +58,11 @@ class Usuario {
 }
 
 
-const user = new Usuario('Elon' , 'Musk')  //Creamos un usuario Elon Musk
+const user = new Usuario('Elon' , 'Musk', ["Perro", "gatito", "loro"])  //Creamos un usuario Elon Musk
 user.addBook("El señor de las moscas" , "William Golding")  //Agrego primer libro
 user.addBook("Fundacion" , "Isaac Asimov") //Agrego segundo libro
-user.addMascota("Perro")   //Agrego mascota 1
-user.addMascota("Gato")    //Agrego mascota 2
+// user.addMascota("Perro")   //Agrego mascota 1
+// user.addMascota("Gato")    //Agrego mascota 2
 
 
 
