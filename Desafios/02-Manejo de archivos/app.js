@@ -3,7 +3,7 @@ const Contenedor = require("./contenedor");
 const Producto = require('./producto');
 
 //Creo un contenedor para el archivo
-const miContenedor = new Contenedor('.productos.txt')
+const miContenedor = new Contenedor('02-Manejo de archivos/.productos.txt')
 
 //Creo tres productos
 const producto1 = new Producto("Escuadra", 100 , "url1")
