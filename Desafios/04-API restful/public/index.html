@@ -11,14 +11,17 @@
 
 <h2>Ingrese Producto:</h2>
 
-<form action="index.html" method="post">
+<!-- <form action="index.html" method="post"> -->
+
+  <form action="http://localhost:8080/api/productos" method="post"></form>
   <label for="title">Titulo:</label><br>
   <input type="text" id="title" name="title" placeholder="Ingrese titulo"><br>
   <label for="price">Precio:</label><br>
   <input type="text" id="price" name="price" placeholder="Ingrese precio"><br>
   <label for="url">Url:</label><br>
   <input type="text" id="url" name="url" placeholder="Ingrese URL"><br><br>
-  <button id="btnpost" class="boton" onclick="return postProducto()"> Crear </button>
+  <input type="submit" value="Submit">
+  <!-- <button id="btnpost" class="boton" onclick="return postProducto()"> Crear </button> -->
 </form> 
 
 <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
