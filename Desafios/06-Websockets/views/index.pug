@@ -51,5 +51,25 @@ html(lang="en")
                     //-             img(src= producto.thumbnail width="100px" )
 
 
+    h2(class="tituloCentrado separacion") Centro de Mensajes
+    div(class="container-fluid Centrado")
+        div(class="row")
+            div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12")
+                form(action="" method="" class="" id="chatForm")
+                    div(class="form-floating mb-3")  
+                        input(type="email" class="form-control" id="email" placeholder="Email" name="email" required)
+                        label(for="foto") Email
+                    div(class="form-floating mb-3" id="chat")
+                    div(class="row")
+                        div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6")
+                            div(class="form-floating mb-3")  
+                                input(type="text" class="form-control" id="message" placeholder="Mensaje" name="menssage" required)
+                                label(for="mesage" id="message") Mensaje
+                        div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6")
+                            div(class="form-floating mb-3")
+                                input(class="btn btn-info" type="submit" value="Enviar" id="btnEnviar")
+                                
+
+    div(class="container-fluid Centrado" id="mensajitos")
     script(src="/socket.io/socket.io.js")
     script(src="/js/client.js")

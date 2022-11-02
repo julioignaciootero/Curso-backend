@@ -24,6 +24,11 @@ const initWsServer = (server) => {
 
         })
 
+        socket.on("enviarmensaje" , async (msg) => {
+            console.log("on enviarmensaje")
+            io.emit("mensajenuevo", msg)
+        })
+
     })
 
     return io

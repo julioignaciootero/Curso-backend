@@ -3,6 +3,10 @@ const nombre = document.getElementById('title');
 const precio = document.getElementById('price');
 const url = document.getElementById('thumbnail');
 const table = document.getElementById('tablita');
+const emailInput = document.getElementById("email")
+const msgInput = document.getElementById("message")
+const mensajitos = document.getElementById("mensajitos")
+const btnEnviar = document.getElementById('btnEnviar');
 
 
 
@@ -27,6 +31,14 @@ async function postData(url = '', data = {}) {
 const socket = io();
 console.log("asdasd")
 socket.emit('allProducts')
+
+socket.on("mensajenuevo", (msg) => {
+
+    const mensaje = document.createElement("p")
+    mensaje.innerText = msg.email + ": " + msg.message
+    mensajitos.appendChild(mensaje)
+
+})
 
 socket.on('producto', (prod) => {
 
@@ -54,4 +66,24 @@ btn.addEventListener('click' , async (e) => {
     } catch (error) {
         console.log(error)
     }
+})
+
+
+btnEnviar.addEventListener('click' , async (e) => {
+  e.preventDefault()
+
+  try {
+    
+
+    let mensaje = {
+      email : emailInput.value,
+      message: msgInput.value
+    }
+    console.log("emit enviarmensaje")
+    socket.emit("enviarmensaje",  mensaje)
+
+
+  } catch (error) {
+    
+  }
 })

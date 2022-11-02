@@ -10,23 +10,5 @@
         "price": 200,
         "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-48.png",
         "id": 2
-    },
-    {
-        "title": "Globo terraqueo",
-        "price": 300,
-        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-48.png",
-        "id": 3
-    },
-    {
-        "title": "sdffsdfsdf",
-        "price": 3,
-        "thumbnail": "sdfsdf",
-        "id": 4
-    },
-    {
-        "title": "zzzzzzzzz",
-        "price": 453654645645,
-        "thumbnail": "sdfsdf",
-        "id": 5
     }
 ]
