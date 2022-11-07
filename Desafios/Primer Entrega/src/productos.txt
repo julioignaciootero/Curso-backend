@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "timestamp": "",
+        "nombre": "Calculadora",
+        "descripcion": "Calculadora cientifica CASIO",
+        "codigo": "1234567890",
+        "foto": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-48.png",
+        "precio": 100.3,
+        "stock": 100
+    }
+]
