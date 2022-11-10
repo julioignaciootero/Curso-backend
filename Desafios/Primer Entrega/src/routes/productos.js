@@ -1,5 +1,6 @@
 const express = require('express')
 const {miContenedor} = require('../controllers/contenedorProductos')
+const { validarAdmin } = require('../middlewares/authcheck');
 
 
 const router = express.Router()
@@ -152,7 +153,7 @@ router.get('/', async (req, res, next) => {
   })
   
   
-  router.delete('/:id' , async (req, res) => {
+  router.delete('/:id' , validarAdmin,  async (req, res) => {
   
     const id = parseInt(req.params.id)
     if(isNaN(id)) {
