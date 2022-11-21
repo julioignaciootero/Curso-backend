@@ -1,0 +1,140 @@
+Crear colecciones
+db.createCollection('mensajes')
+db.createCollection('productos')
+
+
+
+Agregar productos:
+const productos = [
+    {
+        "title": "Escuadra",
+        "price": 120,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    },
+    {
+        "title": "Transportador",
+        "price": 580,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    },
+    {
+        "title": "lapiz",
+        "price": 900,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    },
+    {
+        "title": "cartuchera",
+        "price": 1700,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    },
+    {
+        "title": "lapicera",
+        "price": 2300,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    },
+    {
+        "title": "tijera",
+        "price": 2860,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    },
+    {
+        "title": "goma",
+        "price": 3350,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    },
+    {
+        "title": "resaltador",
+        "price": 4320,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    },
+    {
+        "title": "cuaderno",
+        "price": 4990,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    },
+    {
+        "title": "libreta",
+        "price": 5010,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    },
+
+]
+
+
+const mensajes = [
+	{
+		"email": "julioignaciootero@gmail.com",
+		"time": "30-10-2022 23:10:08",
+		"message": "hola"
+	},
+	{
+		"email": "julioignaciootero@gmail.com",
+		"time": "30-10-2022 23:10:67",
+		"message": "Como estas?"
+	},
+	{
+		"email": "oterojulioignacio@gmail.com",
+		"time": "02-11-2022 16:11:09",
+		"message": "hola"
+	},
+	{
+		"email": "oterojulioignacio@gmail.com",
+		"time": "02-11-2022 21:11:02",
+		"message": "Bien y vos?"
+	}
+]
+
+db.productos.insertMany(productos)
+db.mensajes.insertMany(mensajes)
+
+//Listar los productos
+db.productos.find()
+
+//Listar los mensajes
+db.mensajes.find()
+
+
+//Mostrar la cantidad de documentos
+db.productos.countDocuments()
+db.mensajes.countDocuments()
+
+
+
+//Agregar un producto mas
+db.productos.insertOne({"title": "mouse", "price": 120, "thumbnail": "url2"})
+
+// Buscar por nombre
+db.productos.find({title : "Escuadra"})
+
+
+//Productos con precio menor a 1000
+db.productos.find({ price : {$lt: 1000} })
+
+//entre 1000 y 3000
+db.productos.find({ price : {$gte: 1000, $lte:3000}})
+
+//Productos mayores a 3000
+db.productos.find({ price : {$gt: 3000} })
+
+//Nombre del 3er producto mas barato
+db.productos.find({},{title : 1}).sort({pirce : 1}).skip(2).limit(1)
+
+//Agregar stock a todos los productos stock : 100
+db.productos.updateMany({}, {$set: {"stock" : 100}})
+
+//cambiar stock a 0 a todos los productos con precio mayor a 4000
+db.productos.updateMany({"price" : {$gt: 4000}}, {$set: {"stock" : 0}})
+
+//borrar los productos con precio menor a 1000
+db.productos.deleteMany({price : {$lt: 1000}})
+
+
+//Usuario que pueda leer
+db.createUser(
+ {
+ user: "pepe",
+ pwd: "asd456",
+ roles: [
+{ role: "read", db: "ecommerce" }
+]
+}
+)
