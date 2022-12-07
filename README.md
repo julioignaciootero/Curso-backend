@@ -1,4 +1,4 @@
-# Primer entrega
+# Segunda entrega
 
 Start
 
@@ -10,11 +10,11 @@ Get:
 
 http://localhost:8080/api/productos
 
-http://localhost:8080/api/asdasdasd
+http://localhost:8080/api/carritos
 
-http://localhost:8080/api/carrito
+http://localhost:8080/api/productos/6383f209774ebfd0ba0262cb
 
-http://localhost:8080/api/productos/1
+http://localhost:8080/api/carritos/6387e61d1aa4c4d0d06de89c
 
 
 
@@ -22,30 +22,6 @@ Post:
 
 http://localhost:8080/api/productos
 
-http://localhost:8080/api/productos/1
-
-http://localhost:8080/api/carrito
-
-http://localhost:8080/api/carrito/2/productos
-
-
-Delete: 
-
-http://localhost:8080/api/productos/1
-
-http://localhost:8080/api/carrito/2
-
-http://localhost:8080/api/carrito/2/productos/2
-
-PUT:
-
-http://localhost:8080/api/productos/
-
-
-
-BODIES:
-
-Producto:
 
     {
 
@@ -57,26 +33,54 @@ Producto:
         "stock" : 100
 
     }
-    
 
 
-
-
-Carrito:
+http://localhost:8080/api/carrito
 
     {
-        "productos":[    
-        {"id": 1, "cantidad": 7},    
-        {"id": 2, "cantidad": 7}]
-    }  
+
+        "productos" : [
+            {
+                "producto" : "6383f209774ebfd0ba0262cb",
+                "cantidad" : 2
+            }
+        ]
+    }
     
 
-Producto -> Carrito:
+Agregar producto al carrito: 
+http://localhost:8080/api/carritos/63853c1f130ce2e0e8bfcf11
 
-{
 
-    "id" : 4,
-    "cantidad" : 10
 
-}
+            {
+                "producto" : "6383f98e150ba7bb9a9b60a9",
+                "cantidad" : 2
+            }
+            
+
+Delete: 
+
+http://localhost:8080/api/productos/6383f98e150ba7bb9a9b60a9
+
+http://localhost:8080/api/carritos/63853c1f130ce2e0e8bfcf11
+
+
+
+PUT:
+
+http://localhost:8080/api/productos/6383f98e150ba7bb9a9b60a9
+
+    {
+
+        "nombre": "Cuaderno2",
+        "descripcion" : "asdasd",
+        "codigo" : "0987654321",
+        "foto": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-48.png",
+        "precio" : 9000,
+        "stock" : 100
+
+    }
+
+
 
