@@ -1,6 +1,6 @@
 const express = require('express')
-const {miContenedor} = require('../controllers/contenedorProductos')
-const { validarAdmin } = require('../middlewares/authcheck');
+const {miContenedor} = require('../controllers/contenedorProductos.js')
+const { validarAdmin } = require('../middlewares/authcheck.js');
 
 
 const router = express.Router()
