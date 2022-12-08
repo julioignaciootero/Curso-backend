@@ -1,3 +1,18 @@
+#Desafio MOCK/Normalizr
+
+Rutas:
+
+localhost:8080/api/productos/productos-test
+
+localhost:8080/api/mensajes/original
+
+localhost:8080/api/mensajes/normalizada
+
+localhost:8080/api/mensajes/desnormalizada
+
+
+
+
 # Segunda entrega
 
 Start
