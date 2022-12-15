@@ -1,0 +1,90 @@
+[
+    {
+        "_id" : 1,
+        "author" : {
+            "id" : "julioignaciootero@gmail.com",
+            "nombre" : "julio",
+            "apellido" : "Otero",
+            "edad" : 30,
+            "alias" : "julito",
+            "avatar" : "avatarjulio"
+
+        },
+
+        "text" : "Este es mi primer mensaje"
+    
+    },
+    {
+        "_id" : 2,
+        "author" : {
+            "id" : "julioignaciootero@gmail.com",
+            "nombre" : "julio",
+            "apellido" : "Otero",
+            "edad" : 30,
+            "alias" : "julito",
+            "avatar" : "avatarjulio"
+
+        },
+
+        "text" : "Chau chau adios"
+    },
+    {
+        "_id" : 3,
+        "author" : {
+            "id" : "pepeargento@gmail.com",
+            "nombre" : "Pepe",
+            "apellido" : "Argento",
+            "edad" : 60,
+            "alias" : "Pepe",
+            "avatar" : "avatarPepe"
+
+        },
+
+        "text" : "Hola soy Pepe Argento"
+    },
+    {
+        "_id" : 4,
+        "author" : {
+            "id" : "julioignaciootero@gmail.com",
+            "nombre" : "julio",
+            "apellido" : "Otero",
+            "edad" : 30,
+            "alias" : "julito",
+            "avatar" : "avatarjulio"
+
+        },
+
+        "text" : "Ahora si chau"
+    },
+    {
+        "_id" : 5,
+        "author" : {
+            "id" : "pepeargento@gmail.com",
+            "nombre" : "Pepe",
+            "apellido" : "Argento",
+            "edad" : 60,
+            "alias" : "Pepe",
+            "avatar" : "avatarPepe"
+
+        },
+
+        "text" : "Si son dardo y Maria Elena pasaaaa"
+    },
+
+    {
+        "_id" : 6,
+        "author" : {
+            "id" : "moni@gmail.com",
+            "nombre" : "Moni",
+            "apellido" : "Argento",
+            "edad" : 60,
+            "alias" : "Moni",
+            "avatar" : "moniAvatar"
+
+        },
+
+        "text" : "Cafecitooooo"
+    }
+
+
+]
