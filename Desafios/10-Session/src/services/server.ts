@@ -33,7 +33,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended : true}))
 app.use(cookieParser());
 app.use(session(StoreOptions));
-// app.use(express.static(publicPath));
+
 
 app.use('/' , router)
 

@@ -1,7 +1,6 @@
 import { Router } from "express";
 import express, { Request, Response, NextFunction } from "express";
-import {loginGet, loginPost, logout, visit } from "../controllers/login"
-import {validateLogIn} from '../middlewares/middlewares.js'
+import { validateLogIn } from '../middlewares/middlewares'
 
 const users = [
     {
@@ -34,16 +33,82 @@ loginRouter.post('/login', async (req : Request, res : Response) => {
 
       console.log(user)
       res.status(200).json({
-        msg: "Usuario encontrado",
+        msg: "Usuario ok",
         user
       })
-    //   res.redirect("/formulario");
+
     }
   })
 
-// loginRouter.post('/login', loginPost)
-// loginRouter.get('/logout', logout)
-// loginRouter.get('/secret-endpoint', validateLogIn, visit)
+
+loginRouter.get('/logout', async (req : Request, res : Response) => {
+
+  console.log("Prueba" , req.session)
+  const name = req.session.info?.username;
+  console.log(name);
+  if (name) {
+
+    // req.session.destroy((err) => {
+    //   console.log(err)
+    // })
+
+    req.session.destroy((err) => {
+      if (!err) {
+
+        res.status(200).json({
+          msg: "Usuario Deslogueado",
+          user : name
+        })
+      } else {
+
+          console.log(err)
+          res.status(500).json({ msg: "Error" });
+
+      }
+    });
+  }
+
+})
+
+loginRouter.get("/info", async (req : Request, res : Response)=> {
+  
+
+    const name = req.session.info?.username;
+    if (name) {
+      res.status(200).json({
+        msg: "Informacion de session",
+        info : req.session
+      })
+    } else {
+      res.status(200).json({
+        msg: "No hay sesiones activas",
+        user : name
+      })
+    }
+
+
+})
+
+loginRouter.get('/secret-endpoint', validateLogIn, async (req : Request, res : Response)=> {
+
+  console.log(req.session, req.session.info?.counter)
+  if (req.session.info?.counter != undefined) {
+    req.session.info.counter ++
+    res.json({
+      msg: `${req.session.info?.username} ha visitado el sitio ${req.session.info.counter} veces`,
+  
+    });
+  } else {
+    res.status(500).json({
+      msg: "Error",
+    })
+  }
+
+
+
+})
+
+
 
 
 export default loginRouter

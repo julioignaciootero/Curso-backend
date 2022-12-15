@@ -4,7 +4,7 @@ interface SessionInfo {
     loggedIn: boolean;
     username : string;
     admin : boolean;
-    counter: number
+    counter: number 
 }
 
 declare module 'express-session' {
@@ -15,7 +15,7 @@ declare module 'express-session' {
 
 export const validateLogIn = (req : Request, res : Response , next : NextFunction) => {
 
-    if (req.session.info?.username) next();
+    if (req.session.info?.admin) next();
     else
       res.status(401).json({
         msg: "Usuario NO autorizado",
