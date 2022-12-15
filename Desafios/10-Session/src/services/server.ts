@@ -27,7 +27,7 @@ const StoreOptions = {
 };
 
 
-
+// console.log(StoreOptions)
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
