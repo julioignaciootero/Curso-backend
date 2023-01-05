@@ -1,4 +1,20 @@
+#Desafio PROXY
+
+pm2 start ./src/index.js --port=8080 --modo=fork
+
+
+pm2 start ./src/index.js --port=8081 --modo=cluster
+
+
+pm2 start ./src/index.js --port=8082 --modo=fork
+
+
+pm2 start ./src/index.js --port=8083 --modo=fork
+
 #Desafio MOCK/Normalizr
+
+
+Archivo NGINX subido al repo.
 
 Rutas:
 
