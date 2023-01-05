@@ -11,10 +11,13 @@ pm2 start ./src/index.js --port=8082 --modo=fork
 
 pm2 start ./src/index.js --port=8083 --modo=fork
 
-#Desafio MOCK/Normalizr
+
 
 
 Archivo NGINX subido al repo.
+
+#Desafio MOCK/Normalizr
+
 
 Rutas:
 
