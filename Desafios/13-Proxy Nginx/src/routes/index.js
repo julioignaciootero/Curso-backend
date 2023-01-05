@@ -15,7 +15,7 @@ const router = express.Router()
 
 router.use("/user", routerUser)
 
-router.get("/info", (req, res)=>{              //localhost:8080/api/info
+router.get("/info", (req, res)=>{              
     const numCPUs = os.cpus().length;
 
     res.status(200).json({
