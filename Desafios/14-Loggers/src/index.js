@@ -8,6 +8,7 @@ dotenv.config();
 import minimist from 'minimist'
 import miRouter from './routes/index.js'
 import { loginFunction, signUpFunction } from './services/auth.js';
+import { logger } from "./config/logs.js";
 
 const app = express()
 app.use(express.json())
@@ -60,6 +61,13 @@ const argumentos = {
     otros: args._,
     puerto : args.puerto
 }
+
+
+app.use((req, res, next) => {
+    logger.warn(`Ruta desconocida ${req.originalUrl}` )
+    res.status(404).send("<h1>Not found</h1>")
+})
+
 
 app.listen(argumentos.puerto, () => {
 
