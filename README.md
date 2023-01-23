@@ -1,3 +1,12 @@
+#Desafio DEPLOY RAILWAY
+
+links:
+
+https://backend-deploy-production-3875.up.railway.app/api/info
+
+https://backend-deploy-production-3875.up.railway.app/api/randoms
+
+
 #Desafio PROXY
 
 node src/index.js -p=3000
