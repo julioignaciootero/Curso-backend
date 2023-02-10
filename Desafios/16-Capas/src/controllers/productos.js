@@ -2,6 +2,25 @@ import {prodcutModel} from "../models/productos.js";
 import { logger } from "../config/logs.js";
 // import express, { Request, Response, NextFunction } from "express";
 
+import { saveProduct, getAllProducts } from "../services/products.js";
+export const saveController = async (req, res) => {
+    const { body } = req;
+    try {
+        const product = await saveProduct(body);
+        res.json(product);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getAllController = async (req, res) => {
+    try {
+        const products = await getAllProducts();
+        res.json(products);
+    } catch (error) {
+        console.log(error);
+    }
+}
 export const checkBodyProducto = async ( req ,  res , next) => {
     
     const { nombre , descripcion, codigo, foto, precio, stock } = req.body

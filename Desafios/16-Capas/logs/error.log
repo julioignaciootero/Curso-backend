@@ -1,0 +1,2 @@
+[31merror[39m || Cast to ObjectId failed for value "add" (type string) at path "_id" for model "productos" || Feb-10-2023 12:24:03
+[31merror[39m || Cast to ObjectId failed for value "add" (type string) at path "_id" for model "productos" || Feb-10-2023 12:26:54

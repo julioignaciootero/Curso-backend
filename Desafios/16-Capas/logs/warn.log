@@ -14,3 +14,6 @@
 [33mwarn[39m || Ruta desconocida /api/user/asignarcarrito || Feb-01-2023 21:47:41
 [33mwarn[39m || Ruta desconocida /api/user/asignarcarrito || Feb-01-2023 21:49:42
 [33mwarn[39m || Ruta desconocida /favicon.ico || Feb-08-2023 21:48:21
+[33mwarn[39m || Ruta desconocida /api/products || Feb-10-2023 12:22:18
+[31merror[39m || Cast to ObjectId failed for value "add" (type string) at path "_id" for model "productos" || Feb-10-2023 12:24:03
+[31merror[39m || Cast to ObjectId failed for value "add" (type string) at path "_id" for model "productos" || Feb-10-2023 12:26:54

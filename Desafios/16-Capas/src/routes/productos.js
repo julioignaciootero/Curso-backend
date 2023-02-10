@@ -11,8 +11,12 @@ import {
 const router = express.Router()
 
 
+import { saveController, getAllController } from "../controllers/productos.js";
 
 
+
+router.post('/add', saveController);
+router.get('/list', getAllController);
 
 router.post('/', checkBodyProducto, createProdcuto);
 router.delete('/:id', deleteProdcuto);
