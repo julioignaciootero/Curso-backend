@@ -1,5 +1,5 @@
 import fs from "fs";
-
+import ProductsDTO, { asDto } from "../../dto/productos.js";
 const pathaux = "./src/daos/dao-filesystem/productos.json";
 
 export default class File {
@@ -11,8 +11,9 @@ export default class File {
     try {
       if (fs.existsSync(this.path)) {
         const list = await fs.promises.readFile(this.path, "utf-8");
-        console.log(list);
-        return JSON.parse(list);
+        // console.log(list);
+        return asDto(JSON.parse(list));
+        // return JSON.parse(list);
       } else {
         console.log(`No existent file ${this.path}`);
         return [];
@@ -24,7 +25,7 @@ export default class File {
 
   async save(obj) {
     try {
-      const products = await getAll();
+      const products = await this.getAll();
       products.push(obj);
       await fs.promises.writeFile(this.path, JSON.stringify(products));
       return obj;

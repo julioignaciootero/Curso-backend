@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
+import ProductsDTO, { asDto } from "../../dto/productos.js";
 
 export default class MongoDB {
   static instance;
@@ -32,7 +33,7 @@ export default class MongoDB {
   async getAll() {
     try {
       const docs = await this.collection.find({});
-      return docs;
+      return asDto(docs);
     } catch (error) {
       console.log(error);
     }

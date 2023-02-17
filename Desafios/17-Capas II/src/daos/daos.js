@@ -9,30 +9,34 @@ import { prodcutModel } from "../models/productos.js";
 let persistence;
 let option = process.env.PERSISTENCE;
 // 17-Capas II\src\daos\dao-filesystem\productos.json
-
+let dao;
 switch (option) {
   case "file":
     const productPath = path.resolve(
       __dirname,
       "../daos/dao-filesystem/productos.json"
     );
-    persistence = new File(productPath);
+    dao = new File(productPath);
     console.log(option);
     break;
   case "mongo":
-    persistence = new MongoDB("products", prodcutModel);
-    persistence.initMongoDB();
+    dao = new MongoDB("products", prodcutModel);
+    dao.initMongoDB();
     console.log(option);
     break;
   default:
-    persistence = new Memory();
+    dao = new Memory();
     break;
 }
 
 export async function save(obj) {
-  return await persistence.save(obj);
+  return await dao.save(obj);
 }
 
 export async function getAll() {
-  return await persistence.getAll();
+  return await dao.getAll();
+}
+
+export function getDao() {
+  return dao;
 }
