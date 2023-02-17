@@ -1,10 +1,14 @@
-const products = [];
-    
-export const save = async(obj) => {
-        products.push(obj);
-        return obj;
-}
+export default class Memory {
+  constructor() {
+    this.products = [];
+  }
 
-export const getAll = async () => {
-       return products;
+  async save(obj) {
+    this.products.push(obj);
+    return obj;
+  }
+
+  async getAll() {
+    return this.products;
+  }
 }

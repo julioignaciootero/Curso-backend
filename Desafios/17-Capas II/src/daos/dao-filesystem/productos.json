@@ -1,1 +1,7 @@
-[{"title":"Escuadra","price":100,"url":"url1","id":1},{"title":"Calculadora","price":200,"url":"Calculadora.png","id":2},{"title":"Globo terraqueo","price":300,"url":"urlGlobo","id":3},{"nombre":"Cuaderno"},{"nombre":"Cuaderno"}]
+[
+  { "title": "Escuadra", "price": 100, "url": "url1", "id": 1 },
+  { "title": "Calculadora", "price": 200, "url": "Calculadora.png", "id": 2 },
+  { "title": "Globo terraqueo", "price": 300, "url": "urlGlobo", "id": 3 },
+  { "nombre": "Cuaderno" },
+  { "nombre": "Cuaderno" }
+]
