@@ -1,0 +1,36 @@
+{
+  "name": "19-graphql",
+  "version": "1.0.0",
+  "description": "Deploy:",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js ",
+    "start": "node src/index.js ",
+    "test:linux": "export NODE_OPTIONS=--experimental-vm-modules && npx jest",
+    "test:win": "set NODE_OPTIONS=--experimental-vm-modules && npx jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.4",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "minimist": "^1.2.8",
+    "mongoose": "^7.0.1",
+    "nodemailer": "^6.9.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "twilio": "^4.8.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
