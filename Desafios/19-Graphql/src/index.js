@@ -9,6 +9,8 @@ import minimist from "minimist";
 import miRouter from "./routes/index.js";
 import { loginFunction, signUpFunction } from "./services/auth.js";
 import { logger } from "./config/logs.js";
+import { graphqlHTTP } from "express-graphql";
+import { graphqlRoot, graphqlSchema } from "./services/graphql/products.js";
 
 const app = express();
 app.use(express.json());
@@ -38,6 +40,15 @@ app.use(passport.session());
 passport.use("login", loginFunction);
 passport.use("signup", signUpFunction);
 app.use("/api", miRouter);
+
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema: graphqlSchema,
+    rootValue: graphqlRoot,
+    graphiql: true,
+  })
+);
 
 app.use((req, res, next) => {
   logger.warn(`Ruta desconocida ${req.originalUrl}`);
